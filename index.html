@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohit Soni | Manual QA Tester Portfolio</title>
+<meta name="description" content="Interactive portfolio of Mohit Soni, a Manual QA Tester in Ahmedabad, India: test design lab, defect lifecycle and an e-commerce testing case study.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#fffdf8;--soft:#efebe0;--text:#15171a;--muted:#5d6269;--line:#dcd7cb;--bug:#d9381e;--pass:#0f7b4f;--nav:rgba(245,243,238,.88);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0f11;--surface:#17191d;--soft:#1d2025;--text:#f1efe9;--muted:#a3a8b0;--line:#2a2d33;--bug:#ff7a5c;--pass:#4ade80;--nav:rgba(14,15,17,.88);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0f11;--surface:#17191d;--soft:#1d2025;--text:#f1efe9;--muted:#a3a8b0;--line:#2a2d33;--bug:#ff7a5c;--pass:#4ade80;--nav:rgba(14,15,17,.88);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--nav);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);z-index:10}
+a{color:inherit}p{margin:0}
+.mono,.k,th,.res,.tag,.tt{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;letter-spacing:-.02em;text-decoration:none}.logo i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--bug);margin-left:6px}
+nav{display:flex;align-items:center;gap:22px}
+nav a{font-size:14px;color:var(--muted);text-decoration:none}nav a:hover{color:var(--text)}
+@media(max-width:760px){nav a:not(.btn){display:none}}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--text);color:var(--text);background:transparent}
+.btn.p{background:var(--text);color:var(--bg)}
+nav .btn{padding:7px 16px;font-size:14px}
+section{padding-top:84px}.hero{padding-top:52px}
+.k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bug);margin-bottom:10px}
+h1{font-size:clamp(40px,8vw,84px);line-height:1;letter-spacing:-.045em;margin:0 0 22px;font-weight:700}
+h1 u{text-decoration:underline wavy var(--bug);text-decoration-thickness:.05em;text-underline-offset:.13em}
+h2{font-size:clamp(28px,4.6vw,46px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px;max-width:760px;font-weight:700}
+h3{margin:0 0 6px;font-size:18px;line-height:1.3}
+.m{color:var(--muted)}.intro{max-width:640px;margin-bottom:28px}.lead{font-size:19px;max-width:520px;margin-bottom:28px}
+.g2{display:grid;gap:44px;align-items:center}
+@media(min-width:900px){.g2{grid-template-columns:1.1fr .9fr}}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.bc{padding:0;overflow:hidden;box-shadow:0 30px 60px -36px rgba(0,0,0,.45)}
+.bc .t{display:flex;justify-content:space-between;gap:10px;padding:12px 18px;background:var(--soft);border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.08em;color:var(--muted)}
+.li{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;padding:14px 18px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--text);font:inherit;text-align:left;cursor:pointer}
+.li:hover,.li.sel{background:var(--soft)}
+.li.sel{box-shadow:inset 3px 0 var(--pass)}.li.hit{box-shadow:inset 3px 0 var(--bug)}
+.li small{display:block;color:var(--muted);font-size:12px}
+.res{padding:14px 18px;font-size:13px;min-height:74px;color:var(--muted)}.res.ok{color:var(--pass)}.res.bad{color:var(--bug)}
+:focus-visible{outline:2px solid var(--bug);outline-offset:2px}
+.ctrl{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));padding:18px;border-bottom:1px solid var(--line)}
+label{font-size:12px;color:var(--muted);display:grid;gap:6px}
+input{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:11px 18px;border-top:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;border-top:0}
+.a{color:var(--pass);font-weight:700}.r{color:var(--bug);font-weight:700}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.flow button{font:inherit;font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer}
+.flow button[aria-pressed=true]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.jr{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));counter-reset:j}
+.jr li{counter-increment:j;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-weight:600}
+.jr li::before{content:counter(j,decimal-leading-zero);display:block;font:12px ui-monospace,Menlo,Consolas,monospace;color:var(--bug);margin-bottom:4px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.stat b{display:block;font-size:clamp(34px,6vw,52px);letter-spacing:-.04em;line-height:1.1}
+.stat span{color:var(--muted);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{padding:5px 13px;border-radius:999px;font-size:13px;border:1px solid var(--line);background:var(--surface)}
+.end{background:var(--text);color:var(--bg);border-radius:26px;padding:48px 28px}
+.end .k{color:inherit;opacity:.7}.end p{opacity:.8;max-width:560px}
+.ct{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:28px}
+.ct a{display:block;text-decoration:none;padding:16px 18px;border:1px solid rgba(128,128,128,.45);border-radius:16px}
+.ct a:hover{background:rgba(128,128,128,.18)}
+.ct small{display:block;opacity:.7;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.ct span{font-weight:600;overflow-wrap:anywhere}
+footer{padding:28px 0;margin-top:40px;color:var(--muted);font-size:14px;text-align:center}
+#pg{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:var(--bug);z-index:30}
+.ic{background:none;border:1px solid var(--line);color:var(--text);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;line-height:1}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+.tcl{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.tc{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.tch{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.tc h3{font-size:17px}.tc p{font-size:14px;margin-top:6px}.tc p b{color:var(--text)}
+.sts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sts button{font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer}
+.sts button[aria-pressed=true].sPass{background:var(--pass);border-color:var(--pass);color:var(--bg)}
+.sts button[aria-pressed=true].sFail{background:var(--bug);border-color:var(--bug);color:var(--bg)}
+.sts button[aria-pressed=true].sBlocked{background:var(--muted);border-color:var(--muted);color:var(--bg)}
+.bar2{display:flex;height:10px;border-radius:999px;background:var(--soft);overflow:hidden;margin-top:12px}
+.bar2 i{display:block;height:100%;transition:width .3s}
+#bp{background:var(--pass)}#bf{background:var(--bug)}#bb{background:var(--muted)}
+.lnk{background:none;border:0;padding:0;font:inherit;color:var(--text);text-decoration:underline;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="pg"></div>
+<header><div class="w bar">
+<a class="logo" href="#top">Mohit Soni<i></i></a>
+<nav><a href="#lab">Test lab</a><a href="#cases">Test cases</a><a href="#lifecycle">Lifecycle</a><a href="#case">Case study</a><a class="btn p" href="#contact">Contact</a><button class="ic" id="th" type="button" aria-label="Toggle light or dark theme">◐</button></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="w g2">
+<div>
+<p class="k mono">Manual QA Tester · Ahmedabad, India</p>
+<h1>I break software so your users <u>don’t have to.</u></h1>
+<p class="lead m">I’m Mohit Soni. I design test cases, hunt defects and verify fixes. This page shows how I think, not just what I know, so try the tools below.</p>
+<div class="cta"><a class="btn p" href="#lab">Try my test lab</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<div class="card bc" id="hunt">
+<div class="t mono"><span>CHALLENGE · FIND THE BUG</span><span>cart.html</span></div>
+<button class="li" data-r="ok" data-m="1 × ₹499 = ₹499. Correct."><span>Polymer Bottle<small>1 × ₹499</small></span><b>₹499</b></button>
+<button class="li" data-r="ok" data-m="2 × ₹349 = ₹698. Correct."><span>Storage Box<small>2 × ₹349</small></span><b>₹698</b></button>
+<button class="li" data-r="ok" data-m="1 × ₹150 = ₹150. Correct."><span>Bottle Cap<small>1 × ₹150</small></span><b>₹150</b></button>
+<button class="li" data-r="bug" data-m="Bug found: the items add up to ₹1,347, but the subtotal shows ₹1,437. I would log it as Major, Cart."><span>Subtotal</span><b>₹1,437</b></button>
+<button class="li" data-r="ok" data-m="Free shipping applies above ₹999, and this cart qualifies. Correct."><span>Shipping<small>free above ₹999</small></span><b>₹0</b></button>
+<p class="res" id="res" aria-live="polite">Tap a line to verify it. One of them is wrong.</p>
+</div>
+</div></section>
+
+<section id="lab"><div class="w">
+<p class="k mono">01 — Test design lab</p>
+<h2>Give me a rule. I’ll give you the test cases.</h2>
+<p class="m intro">Boundary value analysis and equivalence partitioning are core test design techniques. Change the field rule and watch the cases update.</p>
+<div class="card bc">
+<div class="ctrl">
+<label>Field<input id="fn" value="Age" maxlength="24"></label>
+<label>Minimum<input id="mn" type="number" value="18"></label>
+<label>Maximum<input id="mx" type="number" value="60"></label>
+</div>
+<div class="scroll"><table id="tt"></table></div>
+</div>
+</div></section>
+
+<section id="cases"><div class="w">
+<p class="k mono">02 — Test case explorer</p>
+<h2>Run a test suite yourself.</h2>
+<p class="m intro">Sample test cases for an e-commerce site in a standard test case format: ID, steps, expected result, type and priority. Mark each one Pass, Fail or Blocked and watch the execution summary update.</p>
+<div class="flow" id="tf"></div>
+<div class="card" style="margin-bottom:16px"><p class="mono" id="sum" style="font-size:13px"></p><div class="bar2"><i id="bp"></i><i id="bf"></i><i id="bb"></i></div></div>
+<div class="tcl" id="tcl"></div>
+<p class="m" style="margin-top:14px;font-size:14px">Illustrative samples, not results from a real test cycle. <button class="lnk" id="rs" type="button">Reset</button></p>
+</div></section>
+
+<section id="lifecycle"><div class="w">
+<p class="k mono">03 — Defect lifecycle</p>
+<h2>A bug isn’t done when it’s found.</h2>
+<p class="m intro">Choose a stage to see what I do at each step, from the first report to the verified fix.</p>
+<div class="flow" id="flow"></div>
+<div class="card"><h3 id="lt">New</h3><p class="m" id="ld">I log the defect with a clear title, environment, steps to reproduce, expected vs actual result and evidence.</p></div>
+<p class="m" style="margin-top:12px;font-size:14px">If the retest fails, the defect is reopened with fresh evidence.</p>
+</div></section>
+
+<section id="case"><div class="w">
+<p class="k mono">04 — Case study</p>
+<h2>Shop Polymer, tested end to end</h2>
+<p class="m intro">A self-driven manual testing project (2026) on an e-commerce website. I covered the full buying journey and documented the work the way a QA team would.</p>
+<ol class="jr"><li>User registration</li><li>Login</li><li>Product search</li><li>Add to cart</li><li>Checkout</li><li>Order placement</li></ol>
+<div class="grid">
+<div class="card stat"><b>40+</b><span>test cases designed and executed</span></div>
+<div class="card stat"><b>4</b><span>scenario types: functional, smoke, regression and UI</span></div>
+<div class="card stat"><b>6</b><span>modules covering the whole buying journey</span></div>
+</div>
+<p class="m" style="margin:18px 0 22px;max-width:680px">Every defect was reported with clear reproduction steps, every fix was verified through retesting, and results were tracked in Microsoft Excel test execution reports.</p>
+<a class="btn" href="https://github.com/Rinmorikichi6" target="_blank" rel="noopener noreferrer">More on GitHub</a>
+</div></section>
+
+<section id="background"><div class="w">
+<p class="k mono">05 — Behind the tests</p>
+<h2>Where the testing mindset comes from</h2>
+<div class="grid" style="margin-top:28px">
+<div class="card"><p class="k mono">2026</p><h3>Manual Testing Intern, QSpider</h3><p class="m">Trained in SDLC, STLC, test case design techniques and defect lifecycle management. Practised functional, regression, smoke and exploratory testing, and used JIRA for bug reporting and tracking with hands-on exposure to Agile QA processes.</p></div>
+<div class="card"><p class="k mono">2022 – 2025</p><h3>BE, Computer Engineering</h3><p class="m">SAL Engineering and Technical Institute, Ahmedabad. Core Java, SQL and DBMS give me the technical context to test beyond the UI.</p></div>
+<div class="card"><p class="k mono">2019 – 2022</p><h3>Diploma, Computer Engineering</h3><p class="m">LJ Polytechnic, Ahmedabad.</p></div>
+</div>
+<p class="k mono" style="margin:30px 0 10px">Toolbox</p>
+<div class="chips"><span class="chip">JIRA</span><span class="chip">BrowserStack</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Microsoft Excel</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">Core Java</span></div>
+<p class="k mono" style="margin:22px 0 10px">Testing types</p>
+<div class="chips"><span class="chip">Functional</span><span class="chip">Regression</span><span class="chip">Smoke</span><span class="chip">Exploratory</span><span class="chip">Cross-browser</span><span class="chip">UAT</span><span class="chip">UI/UX</span></div>
+<p class="k mono" style="margin:22px 0 10px">Test artifacts</p>
+<div class="chips"><span class="chip">Test Cases</span><span class="chip">Test Plans</span><span class="chip">Bug Reports</span><span class="chip">Test Summary Reports</span></div>
+</div></section>
+
+<section id="contact"><div class="w"><div class="end">
+<p class="k mono">06 — Contact</p>
+<h2>Need a second pair of eyes on your product?</h2>
+<p>I’m looking for my first Manual QA Tester role. If you’re hiring, or just want to talk testing, I’d love to hear from you.</p>
+<div class="ct">
+<a href="mailto:mohitsonijob06@gmail.com"><small>Email</small><span>mohitsonijob06@gmail.com</span></a>
+<a href="tel:+917863848613"><small>Phone</small><span>+91 7863848613</span></a>
+<a href="https://linkedin.com/in/mohit-b-soni/" target="_blank" rel="noopener noreferrer"><small>LinkedIn</small><span>linkedin.com/in/mohit-b-soni</span></a>
+<a href="https://github.com/Rinmorikichi6" target="_blank" rel="noopener noreferrer"><small>GitHub</small><span>github.com/Rinmorikichi6</span></a>
+</div>
+</div></div></section>
+</main>
+<footer>© 2026 Mohit Soni · Ahmedabad, Gujarat, India</footer>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var res=$('#res');
+$$('#hunt .li').forEach(function(b){b.addEventListener('click',function(){
+ var bad=b.dataset.r==='bug';
+ $$('#hunt .li').forEach(function(x){x.classList.remove('sel','hit')});
+ b.classList.add('sel');if(bad)b.classList.add('hit');
+ res.className='res '+(bad?'bad':'ok');res.textContent=b.dataset.m;
+})});
+var esc=function(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+function lab(){
+ var n=esc($('#fn').value.trim()||'Value'),a=parseInt($('#mn').value,10),b=parseInt($('#mx').value,10),t=$('#tt');
+ if(isNaN(a)||isNaN(b)||a>=b){t.innerHTML='<tr><td>Enter a minimum that is lower than the maximum.</td></tr>';return}
+ var seen={},rows=[];
+ function add(g,v,ok,u){if(u){if(seen[v])return;seen[v]=1}rows.push([g,String(v),ok])}
+ [[a-1,0],[a,1],[a+1,1],[b-1,1],[b,1],[b+1,0]].forEach(function(x){add('Boundary',x[0],x[1],1)});
+ add('Partition: below range',a-10,0);add('Partition: valid range',Math.round((a+b)/2),1);add('Partition: above range',b+10,0);
+ add('Negative: empty','(empty)',0);add('Negative: letters','abc',0);
+ t.innerHTML='<tr><th>Technique</th><th>Test input</th><th>Expected</th></tr>'+rows.map(function(r){return '<tr><td>'+r[0]+'</td><td class="tt">'+n+' = '+esc(r[1])+'</td><td class="'+(r[2]?'a':'r')+'">'+(r[2]?'Accept ✓':'Reject ✗')+'</td></tr>'}).join('');
+}
+['#fn','#mn','#mx'].forEach(function(s){$(s).addEventListener('input',lab)});lab();
+var S=[['New','I log the defect with a clear title, environment, steps to reproduce, expected vs actual result and evidence.'],['Assigned','The defect reaches a developer. I stay available to answer questions and clarify the steps.'],['Open','The developer analyses the root cause. I keep the report accurate if new details come up.'],['Fixed','A fix ships in a new build and the defect comes back to QA.'],['Retest','I re-run the exact failing steps on the new build, then check related areas for regressions.'],['Closed','The fix is verified, so I close the defect. If it still fails, I reopen it with fresh evidence.']];
+var fl=$('#flow');
+S.forEach(function(s,i){var b=document.createElement('button');b.textContent=(i+1)+'. '+s[0];b.setAttribute('aria-pressed',i?'false':'true');
+ b.addEventListener('click',function(){$$('#flow button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');$('#lt').textContent=s[0];$('#ld').textContent=s[1]});
+ fl.appendChild(b)});
+var TC=[['REG','Register with valid details','Smoke','High','Open the sign-up page, enter a valid name, email and password, then submit.','The account is created and the user is signed in or sent to login.'],['REG','Register with an email that is already used','Functional','High','Submit the sign-up form with an email that already has an account.','A clear error message is shown and no duplicate account is created.'],['LOG','Login with valid credentials','Smoke','High','Enter a registered email and the correct password, then log in.','The user is logged in and the account name is displayed.'],['LOG','Login with a wrong password','Functional','High','Enter a registered email with an incorrect password.','An error message is shown and access is denied.'],['SRH','Search for an existing product','Functional','High','Type a known product name in the search box and submit.','Matching products are listed with the correct name and price.'],['SRH','Search for a product that does not exist','Functional','Medium','Search for a random string such as zzzz.','A friendly “no results” message is shown and nothing breaks.'],['CRT','Add a product to the cart','Smoke','High','Open a product page and click Add to cart.','The cart count increases and the item shows the correct price.'],['CRT','Change the quantity of a cart item','Regression','Medium','Increase the quantity of an item in the cart.','The line total and subtotal recalculate correctly.'],['CHK','Checkout with valid address and payment details','Smoke','High','Proceed to checkout and fill in valid details.','The order summary shows the right items and totals.'],['CHK','Submit checkout with a required field empty','UI','Medium','Leave a mandatory field blank and continue.','A field-level message appears and the form is not submitted.'],['ORD','Place an order successfully','Smoke','High','Confirm the order on the final checkout step.','A confirmation page appears with an order number.'],['ORD','Order appears in the order history','Regression','Medium','Open the account’s order history after placing an order.','The new order is listed with the correct items and total.']];
+var M={REG:'Registration',LOG:'Login',SRH:'Search',CRT:'Cart',CHK:'Checkout',ORD:'Order'},st={},flt='ALL',cnt={};
+TC.forEach(function(t){cnt[t[0]]=(cnt[t[0]]||0)+1;t.id='TC-'+t[0]+'-0'+cnt[t[0]]});
+function draw(){
+ var h='',p=0,f=0,k=0;
+ TC.forEach(function(t){var s=st[t.id]||'';if(s==='Pass')p++;if(s==='Fail')f++;if(s==='Blocked')k++;
+  if(flt!=='ALL'&&flt!==t[0])return;
+  h+='<article class="tc"><div class="tch"><b class="tt">'+t.id+'</b><span class="chip">'+M[t[0]]+'</span><span class="chip">'+t[2]+'</span><span class="chip">'+t[3]+' priority</span></div><h3>'+t[1]+'</h3><p class="m"><b>Steps:</b> '+t[4]+'</p><p class="m"><b>Expected:</b> '+t[5]+'</p><div class="sts">'+['Pass','Fail','Blocked'].map(function(x){return '<button data-i="'+t.id+'" data-s="'+x+'" class="s'+x+'" aria-pressed="'+(s===x)+'">'+x+'</button>'}).join('')+'</div></article>'});
+ $('#tcl').innerHTML=h;
+ var n=TC.length,d=p+f+k;
+ $('#sum').textContent=d+' of '+n+' executed · '+p+' passed · '+f+' failed · '+k+' blocked'+(d?' · pass rate '+Math.round(p*100/d)+'%':'');
+ $('#bp').style.width=p*100/n+'%';$('#bf').style.width=f*100/n+'%';$('#bb').style.width=k*100/n+'%';
+}
+var fb=$('#tf');
+[['ALL','All']].concat(Object.keys(M).map(function(k){return[k,M[k]]})).forEach(function(x){
+ var b=document.createElement('button');b.textContent=x[1];b.setAttribute('aria-pressed',String(x[0]==='ALL'));
+ b.addEventListener('click',function(){flt=x[0];$$('#tf button').forEach(function(y){y.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');draw()});
+ fb.appendChild(b)});
+$('#tcl').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var i=b.dataset.i,s=b.dataset.s;st[i]=st[i]===s?'':s;draw();var q=document.querySelector('#tcl [data-i="'+i+'"][data-s="'+s+'"]');if(q)q.focus()});
+$('#rs').addEventListener('click',function(){st={};draw()});
+draw();
+var root=document.documentElement,pg=$('#pg');
+try{var sv=localStorage.getItem('theme');if(sv)root.setAttribute('data-theme',sv)}catch(e){}
+$('#th').addEventListener('click',function(){var cur=root.getAttribute('data-theme');var dark=cur?cur==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;var nx=dark?'light':'dark';root.setAttribute('data-theme',nx);try{localStorage.setItem('theme',nx)}catch(e){}});
+window.addEventListener('scroll',function(){var h=root.scrollHeight-root.clientHeight;pg.style.width=(h>0?root.scrollTop/h*100:0)+'%'},{passive:true});
+if('IntersectionObserver' in window){root.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});$$('main section:not(.hero) > .w').forEach(function(el){el.classList.add('rv');io.observe(el)})}
+})();
+</script>
+</body>
+</html>
